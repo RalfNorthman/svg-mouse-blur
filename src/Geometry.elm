@@ -1,4 +1,4 @@
-module Geometry exposing (circles, pointsA, pointsB)
+module Geometry exposing (circles, pointsLeft, pointsRight)
 
 import Axis2d
 import Browser
@@ -33,8 +33,8 @@ type Points3
     = Points3 MyPoint MyPoint MyPoint
 
 
-pointsA : Points3
-pointsA =
+pointsLeft : Points3
+pointsLeft =
     let
         p1 =
             Point2d.pixels 150 150
@@ -82,11 +82,11 @@ circles (Points3 p1 p2 p3) attrs =
             ]
 
 
-pointsB : Points3
-pointsB =
+pointsRight : Points3
+pointsRight =
     let
         (Points3 p1 p2 p3) =
-            pointsA
+            pointsLeft
 
         pAxis =
             Point2d.pixels 370 0
@@ -103,4 +103,4 @@ pointsB =
             Points3 p4 p5 p6
 
         _ ->
-            pointsA
+            pointsLeft

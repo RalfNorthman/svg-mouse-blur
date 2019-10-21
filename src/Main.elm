@@ -61,17 +61,17 @@ rootAttributes =
 view : Model -> Html Msg
 view ( x, y ) =
     let
-        littleBlur =
+        blurLeft =
             Filter.blurA (x / 50)
 
-        bigBlur =
+        blurRight =
             Filter.blurB (y / 50)
     in
     svg rootAttributes <|
-        [ littleBlur.svg
-        , bigBlur.svg
-        , Geometry.circles Geometry.pointsA [ Filter.use littleBlur.id ]
-        , Geometry.circles Geometry.pointsB [ Filter.use bigBlur.id ]
+        [ blurLeft.svg
+        , blurRight.svg
+        , Geometry.circles Geometry.pointsLeft [ Filter.use blurLeft.id ]
+        , Geometry.circles Geometry.pointsRight [ Filter.use blurRight.id ]
         ]
 
 
