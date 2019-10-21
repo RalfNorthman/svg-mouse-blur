@@ -1,4 +1,4 @@
-module Blob exposing (circles, pointsA, pointsB)
+module Geometry exposing (circles, pointsA, pointsB)
 
 import Axis2d
 import Browser

@@ -1,12 +1,12 @@
 module Main exposing (main)
 
 import Axis2d
-import Blob
 import Browser
 import Circle2d
 import Color
 import Direction2d
 import Filter
+import Geometry
 import Geometry.Svg as Svg
 import Html exposing (Html)
 import Html.Events.Extra.Mouse as Mouse
@@ -70,8 +70,8 @@ view ( x, y ) =
     svg rootAttributes <|
         [ littleBlur.svg
         , bigBlur.svg
-        , Blob.circles Blob.pointsA [ Filter.use littleBlur.id ]
-        , Blob.circles Blob.pointsB [ Filter.use bigBlur.id ]
+        , Geometry.circles Geometry.pointsA [ Filter.use littleBlur.id ]
+        , Geometry.circles Geometry.pointsB [ Filter.use bigBlur.id ]
         ]
 
 
